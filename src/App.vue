@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import { ref } from 'vue';
+
+const name = ref('田中太郎');
 </script>
 
 <template>
@@ -9,6 +12,8 @@ import TheWelcome from './components/TheWelcome.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+      <!-- 追加 -->
+      <p>こんにちは{{ name }}さん！！</p>
     </div>
   </header>
 
