@@ -1,6 +1,16 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { ref } from 'vue';
+
+const url = ref("https://github.com/hiroto0701");
+const disabled = ref(true);
+
+const imgAttributes = ref({
+  src: "./src/assets/logo.svg",
+  alt: "vueのロゴ",
+  width: 75,
+  height: 75
+});
 </script>
 
 <template>
@@ -13,7 +23,10 @@ import TheWelcome from './components/TheWelcome.vue'
   </header>
 
   <main>
-    <TheWelcome />
+    <p><a :href="url">Github account</a></p>
+    <p><button type="button" :disabled="disabled">機能しないボタンです</button></p>
+
+    <p><img v-bind="imgAttributes"></p>
   </main>
 </template>
 
